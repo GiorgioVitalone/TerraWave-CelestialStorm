@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="night-mode-toggle" onclick="toggleNightMode()" aria-label="Toggle Night Mode">
+        <i class="far fa-sun"></i><i class="far fa-moon"></i>
+    </button>
+    <h1 id="pokemon-name">Pokémon Name</h1>
+    <div id="pokemon-details" class="pokemon row mb-3">
+        <div class="col-12 col-md-6 col-lg-5 mb-4 vertically-centered">
+            <img id="pokemon-image" src="" alt="Pokémon image" style="width: 300px; height: 300px; ">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4 vertically-centered">
+            <div id="type-container" class="type-container" id="type1">
+            <span id="type1" class="type"></span>
+            <span id="type2" class="type"></span>
+            <div class="tooltip-container">
+                <div id="tooltip" class="tooltip">
+                    <div id="double-weaknesses" class="tooltip-section"></div>
+                    <div id="weaknesses" class="tooltip-section"></div>
+                    <div id="resistances" class="tooltip-section"></div>
+                    <div id="double-resistances" class="tooltip-section"></div>
+                    <div id="immunities" class="tooltip-section"></div>
+                </div>
+            </div>
+                </div>
+            <p id="abilities">Abilities: <span class="ability" id="ability 1">Ability 1</span>, <span class="ability" id="ability 2">Ability 2</span></p>
+            <div class="tooltip-container">
+                <div id="abilityTooltip" class="tooltip">
+                    <div id="description" class="tooltip-section"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-3 mb-4 vertically-centered">
+            <div class="font-weight-medium">Statistics&nbsp;:</div>
+            <table class="table table-stat table-sm">
+                <tbody>
+                    <tr>
+                        <th class="text-right">HP</th>
+                        <td class="text-right" id="hp">0</td>
+                        <td>
+                            <div class="progress">
+                                <div id="hp-bar" class="progress-bar yellow" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="200" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Atk</th>
+                        <td class="text-right" id="atk">0</td>
+                        <td>
+                            <div class="progress">
+                                <div id="atk-bar" class="progress-bar yellow" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="200" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Def</th>
+                        <td class="text-right" id="def">0</td>
+                        <td>
+                            <div class="progress">
+                                <div id="def-bar" class="progress-bar yellow" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="200" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">SpA</th>
+                        <td class="text-right" id="spa">0</td>
+                        <td>
+                            <div class="progress">
+                                <div id="spa-bar" class="progress-bar olive" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="200" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">SpD</th>
+                        <td class="text-right" id="spd">0</td>
+                        <td>
+                            <div class="progress">
+                                <div id="spd-bar" class="progress-bar olive" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="200" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Spe</th>
+                        <td class="text-right" id="spe">0</td>
+                        <td>
+                            <div class="progress">
+                                <div id="spe-bar" class="progress-bar yellow" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="200" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <button id="back-btn" class="btn btn-primary">Back</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>populatePokemonDetails();</script>
+</body>
+</html>
+    

@@ -1,0 +1,350 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pokemon {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 15px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: var(--pokemon-bg);
+    box-shadow: var(--pokemon-box-shadow);
+}
+
+.pokemon img {
+    object-fit: cover;
+    grid-row: 1 / 4;
+    border-radius: 50%; /* Crée un cercle à partir de l'image carrée */
+    padding: 5px; /* Adjust the padding size to control the thickness of the border */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#pokemon-details img {
+    border-radius: 9%; /* Crée un cercle à partir de l'image carrée */
+}
+
+.pokemon h2, .pokemon h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.pokemon p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.type-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.type {
+    border-radius: 3px;
+    padding: 3px 6px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-right: 5px; /* Add some right margin */
+    display: inline-block;
+    width: 65px; /* Set a fixed width */
+    text-align: center; /* Center the text within the fixed width */
+    font-style: normal;
+}
+
+
+.type-normal {
+    background-color: #A8A878;
+}
+
+.type-fire {
+    background-color: #F08030;
+}
+
+.type-water {
+    background-color: #6890F0;
+}
+
+.type-electric {
+    background-color: #F8D030;
+}
+
+.type-grass {
+    background-color: #78C850;
+}
+
+.type-ice {
+    background-color: #98D8D8;
+}
+
+.type-fighting {
+    background-color: #C03028;
+}
+
+.type-poison {
+    background-color: #A040A0;
+}
+
+.type-ground {
+    background-color: #E0C068;
+}
+
+.type-flying {
+    background-color: #A890F0;
+}
+
+.type-psychic {
+    background-color: #F85888;
+}
+
+.type-bug {
+    background-color: #A8B820;
+}
+
+.type-rock {
+    background-color: #B8A038;
+}
+
+.type-ghost {
+    background-color: #705898;
+}
+
+.type-dragon {
+    background-color: #7038F8;
+}
+
+.type-dark {
+    background-color: #705848;
+}
+
+.type-steel {
+    background-color: #B8B8D0;
+}
+
+.type-fairy {
+    background-color: #EE99AC;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--table-header-bg);
+}
+
+tr:nth-child(even) {
+    background-color: var(--table-row-even-bg);
+}
+
+tr:hover {
+    background-color: var(--table-row-hover-bg);
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+
+
+.pokemon table {
+    border-collapse: collapse;
+    background-color: var(--pokemon-table-bg);
+}
+
+.pokemon th,
+.pokemon td {
+    border: 0px solid var(--table-border-color);
+    padding: 5px;
+    text-align: center;
+    color: var(--pokemon-table-text);
+}
+
+.pokemon th {
+    background-color: var(--pokemon-th-bg);
+}
+
+.tooltip-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    /* position: absolute; */
+    top: 25px; /* Adjust this value to control the vertical distance between the type and the tooltip */
+    left: 0;
+    padding: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 1;
+    width: max-content;
+}
+
+.tooltip-section {
+    margin-bottom: 5px;
+    width: w;
+    margin: 6px;
+}
+
+.tooltip-section:last-child {
+    margin-bottom: 0;
+}
+
+:root {
+    --background-color: #282828;
+    --text-color: #f2f2f2;
+    --border-color: #444;
+    --table-header-bg: #383838;
+    --table-row-even-bg: #383838;
+    --table-row-hover-bg: #505050;
+    --table-border-color: #444;
+    --pokemon-th-bg: #383838;
+    --pokemon-bg: #383838;
+    --pokemon-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+    --pokemon-table-bg: #383838;
+    --pokemon-table-text: #f2f2f2;
+    --pokemon-table-border: #444;
+    --primary-color: #60A0F0;
+    --primary-color-dark: #3C84D8;
+    --primary-color-darker: #2C6DC2;
+}
+
+.light-mode {
+    --background-color: #f8f8f8;
+    --text-color: #000;
+    --border-color: #ddd;
+    --table-header-bg: #f2f2f2;
+    --table-row-even-bg: #f2f2f2;
+    --table-row-hover-bg: #ddd;
+    --table-border-color: #ddd;
+    --pokemon-th-bg: #eee;
+    --pokemon-bg: #f8f8f8;
+    --pokemon-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --pokemon-table-bg: #f8f8f8;
+    --pokemon-table-text: #000;
+    --pokemon-table-border: #ddd;
+    --primary-color: #4B89DC;
+    --primary-color-dark: #3570B9;
+    --primary-color-darker: #275A8E;
+}
+
+.night-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s;
+    opacity: 1;
+}
+
+.night-mode-toggle:hover {
+    color: #888;
+}
+
+.night-mode-toggle:active {
+    color: #555;
+}
+
+.fa-moon.hidden {
+    display: none;
+}
+
+
+#sort-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-custom {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.btn-custom:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.btn-custom:active {
+    background-color: var(--primary-color-darker);
+}
+
+.progress .progress-bar {
+    border-radius: .25rem;
+}
+
+.progress, .progress-bar {
+    display: flex;
+    overflow: hidden;
+}
+
+.progress-bar {
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .6s ease;
+}
+
+.progress .progress-bar.red {
+    background-color: #ff3860;
+}
+
+.progress .progress-bar.orange {
+    background-color: #ff851b;
+}
+
+.progress .progress-bar.yellow {
+    background-color: #ffc107;
+}
+
+.progress .progress-bar.olive {
+    background-color: #808000;
+}
+
+.progress .progress-bar.teal {
+    background-color: #00b5ad;
+}
+
+.progress .progress-bar.blue {
+    background-color: #007bff;
+}
+
+.progress .progress-bar.green {
+    background-color: #28a745;
+}
+

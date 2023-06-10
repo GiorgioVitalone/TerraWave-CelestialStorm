@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Pokémon Statsheets</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <button class="night-mode-toggle" onclick="toggleNightMode()" aria-label="Toggle Night Mode">
+        <i class="far fa-sun"></i><i class="far fa-moon"></i>
+    </button>
+    <h1>Custom Pokémon Statsheets</h1>
+    <div id="sort-buttons">
+        <button class="btn-custom" onclick="sortByPokedexNumber()">Pokédex Number</button>
+        <button class="btn-custom" onclick="sortByName()">Name</button>
+        <button class="btn-custom" onclick="sortByType1()">Type 1</button>
+        <button class="btn-custom" onclick="sortByType2()">Type 2</button>
+        <button class="btn-custom" onclick="sortByHP()">HP</button>
+        <button class="btn-custom" onclick="sortByAtk()">Atk</button>
+        <button class="btn-custom" onclick="sortByDef()">Def</button>
+        <button class="btn-custom" onclick="sortBySpA()">SpA</button>
+        <button class="btn-custom" onclick="sortBySpD()">SpD</button>
+        <button class="btn-custom" onclick="sortBySpe()">Spe</button>
+        <button class="btn-custom" onclick="sortByBSR()">BSR</button>
+    </div>  
+    <div id="pokemon-list"></div>
+    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('button').click(function() {
+                $('#pokemon-list').fadeOut(200, function() {
+                    $('#pokemon-list').fadeIn(200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
