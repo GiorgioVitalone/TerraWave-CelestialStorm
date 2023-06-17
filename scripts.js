@@ -969,6 +969,17 @@ async function getTypeRepresentation() {
     }
 }
 
+function filterPokemonArray(query) {
+    return pokemonArray.filter(pokemon => pokemon.Name.toLowerCase().includes(query.toLowerCase()));
+  }
+  
+  document.getElementById('search').addEventListener('input', (event) => {
+    const query = event.target.value;
+    const filteredArray = filterPokemonArray(query);
+    updateDisplayedPokemon(filteredArray);
+  });
+  
+
 getTypeRepresentation();
 
 fetchPokemonData();
